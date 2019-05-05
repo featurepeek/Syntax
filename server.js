@@ -15,7 +15,7 @@ app.prepare().then(() => {
   server.get('/api/shows', (req, res) => {
     res.json(getShows());
   });
-
+   
   server.get('/api/shows/:number', (req, res) => {
     const show = getShow(req.params.number);
     if (show) {
