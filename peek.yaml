@@ -1,6 +1,0 @@
----
-services:
-- name: frontend
-  dockerfile: ./Dockerfile
-  ports:
-  - 3000
