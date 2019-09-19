@@ -1,7 +1,6 @@
 version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@0.0.2
-  featurepeek: featurepeek/ping@0.0.1
 workflows:
   build-and-deploy:
     jobs:
@@ -10,7 +9,15 @@ workflows:
           repo: "${AWS_RESOURCE_NAME_PREFIX}"
           region: ${AWS_DEFAULT_REGION}
           tag: "${CIRCLE_SHA1}"
-      - featurepeek/ping_featurepeek:
+      - ping_featurepeek:
           requires:
             - aws-ecr/build_and_push_image
-          env: dev
+          filters:
+            branches:
+              ignore: master
+jobs:
+  ping_featurepeek:
+    docker:
+      - image: "circleci/node:9.6.1"
+    steps:
+      - run: bash <(curl -s https://peek.run/ci)
