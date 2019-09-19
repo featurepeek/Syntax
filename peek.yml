@@ -1,4 +1,4 @@
 services:
 - name: syntax
   dockerfile: ./Dockerfile
-  port: 3000
+  port: 6969
