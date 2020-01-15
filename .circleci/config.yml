@@ -15,6 +15,6 @@ workflows:
 jobs:
   ping_featurepeek:
     docker:
-      - image: "circleci/node:8.11"
+      - image: "circleci/node:10.15"
     steps:
       - run: bash <(curl -s https://peek.run/ci) -p ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_RESOURCE_NAME_PREFIX}:${CIRCLE_SHA1}
