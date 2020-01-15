@@ -8,3 +8,4 @@ This particular repo uses:
 - the [Amazon Elastic Container Registry (ECR)](https://aws.amazon.com/ecr/) container registry
 
 Check out [more FeaturePeek example repos](https://github.com/featurepeek?utf8=✓&q=example&type=&language=) to find out how to integrate with FeaturePeek using different combinations of CI services, front-end frameworks, and container registries. 
+
