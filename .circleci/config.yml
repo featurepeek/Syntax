@@ -12,12 +12,9 @@ workflows:
       - ping_featurepeek:
           requires:
             - aws-ecr/build_and_push_image
-          filters:
-            branches:
-              ignore: master
 jobs:
   ping_featurepeek:
     docker:
-      - image: "circleci/node:9.6.1"
+      - image: "circleci/node:12"
     steps:
-      - run: bash <(curl -s https://peek.run/ci)
+      - run: bash <(curl -s https://peek.run/ci) -p ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${AWS_RESOURCE_NAME_PREFIX}:${CIRCLE_SHA1}

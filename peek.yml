@@ -1,4 +1,4 @@
-services:
-- name: syntax
-  dockerfile: ./Dockerfile
+version: 2
+main:
+  type: docker
   port: 3000
