@@ -3,7 +3,7 @@ const next = require('next');
 const Router = require('./routes').Router;
 
 const dev = process.env.NODE_ENV !== 'production';
-const port = parseInt(process.env.PORT, 10) || 3000;
+const port = parseInt(process.env.PORT, 10) || 80;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const { getShows, getShow, getAllShowSickPicks } = require('./lib/getShows');
